@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <title>A list of all Available Reviews</title>
+    <style>
+ body {
+        background-color: rgb(0, 0, 0);
+        color: lavenderblush;
+        text-align: center;
+        font-size: xx-large;
+      }
+
+      a {
+        border: 2mm ridge white;
+        padding: 10px;
+        background-color: lavenderblush;
+        border-radius: 15px;
+        font-size: 75%;
+      }
+      li{
+      list-style-type: none;
+      padding: 15px;
+      }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>A List of All Reviews</h1>
+</header>
+<main>
+    <ul>
+        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a></li>
+        <li><a href="/">Home</a></li>
+    </ul>
+</main>
+<footer>
+    <small>&copy Ryan Webster 2021</small>
+</footer>
+
+</body>
+</html>
+
